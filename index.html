@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/helvetica.css">
+    <title>FancyWeather</title>
+</head>
+
+<body>
+
+    <nav>
+        <div class="width-limiter">
+            <img src="images/logo.png" alt="Fancy Weather Logo">
+            <div id="searchSection">
+                <input type="text" id="searchCity" placeholder="location name">
+                <select id="searchCountry">
+                </select>
+                <div id="searchSubmit" onclick="search();">search</div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="noVars" class="dis-none">
+        <p>Type your location in the 'location name' field and press the 'search' button. <br> Selecting a country is optional.</p>
+        <p id="credits">FancyWeather - Vicentiu Vitriuc 2019 - API Source: <a href="https://openweathermap.org/">OpenWeatherMap</a></p>
+    </section>
+
+    <section id="mapFullscreen" style="display:none;">
+        <div id="width-limiter">
+            <div id="map">
+                <div id="closeMap">Close</div>
+            </div>
+            <div id="light-box"></div>
+        </div>
+    </section>
+
+    <main id="main">
+        <section id="weatherBox">
+            <div class="width-limiter flex">
+                <div id="weatherIcon">     
+                </div>
+                <div id="weatherTemp">
+                    <p>weather right now:</p>
+                    <div id="temperature"></div>
+                    <div id="temperatureMinMax"></div>
+                </div>
+                <div id="weatherMore">
+                    <p class="data">Wind:</p>
+                    <p class="content" id="wind"></p>
+                    <p class="data">Athmospheric pressure:</p>
+                    <p class="content" id="pressure"></p>
+                    <p class="data">Humidity:</p>
+                    <p class="content" id="humidity"></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="locationBox">
+            <div class="width-limiter">
+                <div id="mapButton">View Precipitation Map</div>
+                <div id="dateGen"></div>
+                <div id="location"></div>
+            </div>
+        </section>
+
+        <section id="graphBox">
+            <div class="width-limiter">
+                <br>
+                <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 1320 206" id="svgData">
+                </svg>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="resolution">
+        <p>Your resolution is too small to properly display FancyWeather. Please use a desktop PC or resize your browser window.</p>
+    </div>
+
+        <script src="js/main.js"></script>
+</body>
+
+</html>
